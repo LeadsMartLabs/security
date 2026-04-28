@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="index,follow">
+<title>Security Research Lab — Leads Mart</title>
+<meta name="description" content="Vulnerability research and coordinated disclosure in WordPress plugins, web applications, and open-source software.">
+<meta property="og:title" content="Leads Mart Security Research Lab">
+<meta property="og:description" content="Vulnerability research and coordinated disclosure. Published advisories, methodology, and PGP-secured contact.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://leads-mart.com/security">
+<style>
+  :root{
+    --bg:#0a0e14; --fg:#e6edf3; --muted:#7d8590; --accent:#58a6ff;
+    --line:#21262d; --card:#0d1117; --code:#161b22;
+    --warn:#f0883e; --ok:#56d364;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    background:var(--bg); color:var(--fg);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+    line-height:1.55; font-size:16px;
+  }
+  .wrap{max-width:780px; margin:0 auto; padding:48px 24px 96px}
+  h1{font-size:1.85rem; margin:0 0 8px; letter-spacing:-0.01em}
+  h2{font-size:1.15rem; margin:48px 0 16px; padding-bottom:8px; border-bottom:1px solid var(--line); letter-spacing:-0.005em}
+  h3{font-size:1rem; margin:24px 0 8px; color:var(--fg)}
+  p{margin:0 0 12px; color:var(--fg)}
+  a{color:var(--accent); text-decoration:none}
+  a:hover{text-decoration:underline}
+  small,.muted{color:var(--muted); font-size:0.92rem}
+  hr{border:none; border-top:1px solid var(--line); margin:32px 0}
+  code,kbd,pre{font-family:"SF Mono","Menlo","Monaco",ui-monospace,monospace; font-size:0.92em}
+  code{background:var(--code); padding:2px 6px; border-radius:4px}
+  pre{background:var(--code); padding:14px 16px; border-radius:6px; overflow-x:auto; line-height:1.4; border:1px solid var(--line)}
+  pre code{background:transparent; padding:0}
+  table{border-collapse:collapse; width:100%; margin:8px 0 16px}
+  th,td{text-align:left; padding:8px 10px; border-bottom:1px solid var(--line); vertical-align:top}
+  th{color:var(--muted); font-weight:600; font-size:0.88rem; text-transform:uppercase; letter-spacing:0.04em}
+  ul{padding-left:20px; margin:0 0 12px}
+  ul li{margin-bottom:6px}
+  .lead{font-size:1.08rem; color:var(--fg); margin-bottom:24px}
+  .meta{color:var(--muted); margin-bottom:32px; font-size:0.95rem}
+  .pill{display:inline-block; padding:2px 8px; background:var(--card); border:1px solid var(--line); border-radius:999px; font-size:0.78rem; color:var(--muted); margin-right:6px}
+  .empty{color:var(--muted); font-style:italic; padding:12px 0}
+  .fingerprint{background:var(--code); border:1px solid var(--line); border-radius:6px; padding:12px 16px; font-family:"SF Mono","Menlo",monospace; font-size:0.95rem; word-spacing:6px; user-select:all}
+  footer{margin-top:64px; padding-top:24px; border-top:1px solid var(--line); color:var(--muted); font-size:0.88rem}
+  footer a{color:var(--muted)}
+  .timeline{margin:8px 0 16px; padding:0; list-style:none}
+  .timeline li{display:flex; gap:16px; padding:6px 0; border-bottom:1px solid var(--line)}
+  .timeline li:last-child{border-bottom:none}
+  .timeline .day{flex:0 0 90px; color:var(--accent); font-weight:600; font-family:"SF Mono",monospace; font-size:0.92rem}
+</style>
+</head>
+<body>
+<main class="wrap">
+
+  <h1>Security Research Lab</h1>
+  <p class="meta">An arm of <a href="https://leads-mart.com">Leads Mart</a> &middot; <span class="pill">vulnerability research</span><span class="pill">coordinated disclosure</span></p>
+
+  <p class="lead">
+    We discover and responsibly disclose vulnerabilities in WordPress plugins,
+    web applications, and open-source software. The lab works alongside the
+    Leads Mart AI Lab, applying AI-assisted code review and pattern matching
+    to security audits at scale.
+  </p>
+
+  <h2>Disclosures</h2>
+  <p class="empty">First public advisories pending CVE assignment and embargo lift. Index will populate here.</p>
+  <p><small>Public archive: <a href="https://github.com/LeadsMartLabs/security-disclosures">github.com/LeadsMartLabs/security-disclosures</a></small></p>
+
+  <h2>Methodology</h2>
+  <ul>
+    <li>Manual source-code review against the latest plugin / application release.</li>
+    <li>AI-assisted triage and pattern matching using internal tooling built on top of Anthropic Claude and GPT-4-class models.</li>
+    <li>Validation against locally-deployed installations only. We do not test against third-party production infrastructure without explicit written authorization.</li>
+    <li>Coordinated disclosure with a 90-day embargo window.</li>
+  </ul>
+
+  <h2>Disclosure Policy</h2>
+  <p>We follow a 90-day coordinated disclosure timeline:</p>
+  <ul class="timeline">
+    <li><span class="day">Day 0</span><span>Vendor notified via security contact with full technical detail and reproducer.</span></li>
+    <li><span class="day">Day 7</span><span>Reminder email if no acknowledgment.</span></li>
+    <li><span class="day">Day 30</span><span>Escalation to relevant CNA (Patchstack &middot; Wordfence &middot; MITRE).</span></li>
+    <li><span class="day">Day 90</span><span>Public disclosure regardless of patch status, unless mutually agreed extension.</span></li>
+  </ul>
+
+  <h2>Contact</h2>
+  <table>
+    <tr><th>Public</th><td><a href="mailto:security@leads-mart.com"><code>security@leads-mart.com</code></a></td></tr>
+    <tr><th>Disclosure (PGP only)</th><td><a href="mailto:disclosure@leads-mart.com"><code>disclosure@leads-mart.com</code></a></td></tr>
+    <tr><th>Public archive</th><td><a href="https://github.com/LeadsMartLabs/security-disclosures">github.com/LeadsMartLabs/security-disclosures</a></td></tr>
+    <tr><th>Org</th><td><a href="https://github.com/LeadsMartLabs">github.com/LeadsMartLabs</a></td></tr>
+  </table>
+
+  <h2>PGP Key</h2>
+  <p>All embargoed correspondence accepted PGP-encrypted only.</p>
+
+  <h3>Fingerprint</h3>
+  <div class="fingerprint">B229 0271 9256 5F55 642D&nbsp;&nbsp;A5BC 0185 0834 7218 C43B</div>
+
+  <h3>Public key</h3>
+  <p>Download &middot; <a href="/pgp.txt"><code>pgp.txt</code></a> &middot; or fetch from <a href="https://keys.openpgp.org/search?q=B229027192565F55642DA5BC018508347218C43B">keys.openpgp.org</a>.</p>
+
+  <pre><code>uid:    Ahmed Nassef (Leads Mart Security Research Lab) &lt;disclosure@leads-mart.com&gt;
+type:   RSA 4096 / RSA 4096 (sign + encrypt)
+expires: 2 years from issue
+fpr:    B229 0271 9256 5F55 642D  A5BC 0185 0834 7218 C43B</code></pre>
+
+  <h3>Verify</h3>
+  <pre><code>$ gpg --keyserver keys.openpgp.org --recv-keys B229027192565F55642DA5BC018508347218C43B
+$ gpg --fingerprint disclosure@leads-mart.com
+# expected: B229 0271 9256 5F55 642D  A5BC 0185 0834 7218 C43B</code></pre>
+
+  <footer>
+    Researcher: Ahmed Nassef &middot; Leads Mart &middot; <a href="https://leads-mart.com">leads-mart.com</a>
+  </footer>
+</main>
+</body>
+</html>
